@@ -1,24 +1,45 @@
 from Setup import *
+import unittest
 
+PROFILE = '//body/div[@id="root"]/div[1]/div[2]/div[1]/div[3]/a[1]/img[1]'
+SERCH = '//body/div[@id="root"]/div[1]/div[2]/div[1]/div[2]/div[1]/input[1]'
+BUTTON_SERCH = "//button[contains(text(),'Search')]"
 
-class Profile(Setup):
+class Profile(Setup ,unittest.TestCase):
+
+    driver = None
+
+    @classmethod
     def test_ProfileSearch(self):
-        driver = Setup.init(self)
-        sleep(2)
-        PROFILE= "/html[1]/body[1]/div[2]/div[1]/div[2]/div[1]/div[3]/a[1]/img[1]"
-        driver.find_element(By.XPATH,PROFILE).click()
-        SERCH="//body/div[@id='root']/div[1]/div[2]/div[1]/div[2]/div[1]/input[1]"
-        BUTTON_SERCH="//button[contains(text(),'Search')]"
-        sleep(1)
-        driver.find_element(By.XPATH,SERCH).send_keys("simha")
-        sleep(2)
-        driver.find_element(By.XPATH,BUTTON_SERCH).click()
-        sleep(1)
-        driver.find_element(By.XPATH,PROFILE).click()
-        driver.find_element(By.XPATH,SERCH).send_keys('daniel')
-        sleep(3)
-        driver.find_element(By.XPATH,BUTTON_SERCH).click()
+        self.driver = Setup.init(self)
+        return self.driver
+
+    def test_Search(self):
+
+        """Tests wetechsocial search feature. Searches for Existing user "simha" then
+                        verified that some results show up."""
+
         sleep(5)
+        self.driver.find_element(By.XPATH, PROFILE).click()
+        self.driver.refresh()
+        sleep(5)
+        self.driver.find_element(By.XPATH,).send_keys(SERCH, "simha")
+        sleep(5)
+        self.driver.find_element(By.XPATH, BUTTON_SERCH).click()
+        sleep(5)
+
+    def test_Search_invalid(self):
+
+        self.driver.find_element(By.XPATH, PROFILE).click()
+        self.driver.find_element(By.XPATH, SERCH).send_keys('')
+        self.driver.find_element(By.XPATH, BUTTON_SERCH).click()
+        sleep(5)
+
+    def test_Search_incorrectly(self):
+        self.driver.find_element(By.XPATH, PROFILE).click()
+        self.driver.find_element(By.XPATH, SERCH).send_keys('123654')
+        self.driver.find_element(By.XPATH, BUTTON_SERCH).click()
+
 
     def testButtonlogout(self):
         driver= Setup.init(self)
