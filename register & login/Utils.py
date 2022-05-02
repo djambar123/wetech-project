@@ -20,8 +20,8 @@ class Cheak(Start):
                 driver.find_element(By.XPATH,"//button[contains(text(),'Sign Up')]").click()
 
                 sleep(2)
-        # logout = driver.find_element(By.CSS_SELECTOR, "//span[normalize-space()='Feed']").get_attribute("textContent")
-        # assert logout == "Feed"
+        logout = driver.find_element(By.CSS_SELECTOR, "//span[normalize-space()='Feed']").get_attribute("textContent")
+        assert logout == "Feed"
         driver.close()
 
 
