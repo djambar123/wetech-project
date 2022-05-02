@@ -18,10 +18,7 @@ class Cheak(Start):
                     sleep(1)
             else:
                 driver.find_element(By.XPATH,"//button[contains(text(),'Sign Up')]").click()
-                v = driver.find_element(By.XPATH, "//form[@class='loginBox']/child::*").get_attribute("")
-                for i in v :
-                    if i == "":
-                        assert i == "Please fill out this field."
+
         driver.close()
 
 
