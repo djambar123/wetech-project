@@ -23,8 +23,7 @@ class Search(Setup, unittest.TestCase):
         self.driver.find_element(By.XPATH, searchInput).send_keys("simha")
         sleep(2)
         self.driver.find_element(By.XPATH, searchButton).click()
-        name = self.driver.find_element(By.XPATH, "//body[1]/div[2]/div[1]/div[2]/div[2]/div[1]").get_attribute(
-            "innerText")
+        name = self.driver.find_element(By.XPATH, "//body[1]/div[2]/div[1]/div[2]/div[2]/div[1]").get_attribute("innerText")
         sleep(2)
         assert name == "simha amara\nFrom : israel\nLive's in : rehovot\nFriends : 4 Followings"
 
