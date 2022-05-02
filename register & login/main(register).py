@@ -1,7 +1,7 @@
 from Utils import *
 
 #valid test
-user_name = "daniel"
+user_name = ""
 user_LastName = "asas"
 url_profile_pic = "asxasc"
 url_cover_pic = "file:///Users/dnylgmbr/Desktop/one/17354.webp"
@@ -13,7 +13,8 @@ conf_password = "123456"
 
 driver = Cheak()
 driver.test_register(user_name,user_LastName,url_profile_pic,url_cover_pic,Emil,contry,city,password,conf_password)
-driver.test_ui_signup()
+
+# driver.test_ui_signup()
 
 
 # #invalid test username null

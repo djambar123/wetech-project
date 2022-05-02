@@ -18,10 +18,8 @@ class Cheak(Start):
                     sleep(1)
             else:
                 driver.find_element(By.XPATH,"//button[contains(text(),'Sign Up')]").click()
-
-                sleep(2)
-        logout = driver.find_element(By.CSS_SELECTOR, "//span[normalize-space()='Feed']").get_attribute("textContent")
-        assert logout == "Feed"
+            v = driver.find_element(By.XPATH, "//input[@placeholder='User Name']").get_attribute("validationMessage")
+            assert v == "Please fill out this field."
         driver.close()
 
 
@@ -60,6 +58,7 @@ class Cheak(Start):
 
         log = driver.find_element(By.XPATH, "//button[@class='loginRegisterButton']").get_attribute("innerText")
         assert log == "Log into Account"
+
 
 
 # def test_signup():
