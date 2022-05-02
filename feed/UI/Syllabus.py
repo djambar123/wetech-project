@@ -6,12 +6,13 @@ class UI_Syllabus(Setup, unittest.TestCase):
 
     driver = None
 
+    # Execute before all test methode
     @classmethod
     def setUp(self):
         self.driver = Setup.init(self)
         return self.driver
 
-    def test_htmlself(self):
+    def test_html(self):
         sleep(3)
         self.driver.find_element(By.XPATH,"//body/div[@id='root']/div[1]/div[2]/div[2]/div[3]/div[1]/ul[1]/ul[1]/li[1]").click()
 
@@ -98,7 +99,7 @@ class UI_Syllabus(Setup, unittest.TestCase):
         assert footer == "all rights deserve to our Full-Stack developers\nEden Genet Tasama\nAmir Mangisto\nHaim Ayenow"
         sleep(3)
 
-
+    # Execute after all test methode
     @classmethod
     def tearDownClass(cls):
         cls.driver.close()

@@ -6,6 +6,7 @@ class UI_Search(Setup, unittest.TestCase):
 
     driver = None
 
+    # Execute before all test methode
     @classmethod
     def setUp(self):
         self.driver = Setup.init(self)
@@ -15,7 +16,6 @@ class UI_Search(Setup, unittest.TestCase):
         # check if the page turn dark
         self.driver.find_element(By.CLASS_NAME,"ToggleButton").click()
 
-
     def test_upper_bur(self):
 
         sleep(3)
@@ -23,8 +23,9 @@ class UI_Search(Setup, unittest.TestCase):
         sleep(3)
         assert UpperBur == "WeTech\nSearch\nLOGOUT"
 
-
     def test_search_page(self):
+
+
         SEARCH_BUTTON = "//button[contains(text(),'Search')]"
         PEOPLE_TEXT = "//body[1]/div[2]/div[1]/div[2]/div[2]/h1[1]"
 
@@ -56,6 +57,7 @@ class UI_Search(Setup, unittest.TestCase):
         value = self.driver.find_element(By.XPATH,"//body[1]/div[2]/div[1]/div[2]/div[2]/div[3]").get_attribute("innerText")
         assert value == "Syllabus\nHTML\nCSS\nJAVASCRIPT"
 
+    # Execute after all test methode
     @classmethod
     def tearDownClass(cls):
         cls.driver.close()
