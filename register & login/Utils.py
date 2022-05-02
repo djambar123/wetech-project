@@ -1,8 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from time import sleep
-from source import *
-
+from Source import *
 
 class Cheak(Start):
 
@@ -19,8 +18,9 @@ class Cheak(Start):
                     sleep(1)
             else:
                 driver.find_element(By.XPATH,"//button[contains(text(),'Sign Up')]").click()
-        sleep(2)
-        # logout = driver.find_element(By.CSS_SELECTOR, "//span[normalize-space()='Feed']").get_attribute("innerText")
+
+                sleep(2)
+        # logout = driver.find_element(By.CSS_SELECTOR, "//span[normalize-space()='Feed']").get_attribute("textContent")
         # assert logout == "Feed"
         driver.close()
 
@@ -41,9 +41,9 @@ class Cheak(Start):
             else:
                 driver.find_element(By.XPATH,"//button[@class='loginButton']").click()
                 sleep(2)
-        # logout = driver.find_element(By.XPATH, "(//span[@class='logoName'])[1]").get_attribute("innerText")
-        # assert logout == "WeTech"
-        driver.close()
+                driver.close()
+        logout = driver.find_element(By.XPATH, "(//span[@class='logoName'])[1]").get_attribute("innerText")
+        assert logout == "WeTech"
 
 
 
