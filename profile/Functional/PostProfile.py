@@ -1,3 +1,5 @@
+import time
+
 from Setup import *
 import unittest
 import pyautogui
@@ -19,16 +21,16 @@ class Post(Setup ,unittest.TestCase):
     def test_profile_picture(self):
 
         self.driver.find_element(By.XPATH, PROFILE).click()
-        sleep(2)
+        time.sleep(2)
         self.driver.find_element(By.XPATH,"//body/div[@id='root']/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]").click()
-        sleep(3)
+        time.sleep(3)
         picture_post = self.driver.find_element(By.XPATH,"//body/div[@id='root']/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]").get_attribute("innerText")
         assert picture_post == ""
 
 
     def test_namePost(self):
         self.driver.find_element(By.XPATH, PROFILE).click()
-        sleep(2)
+        time.sleep(2)
         name= self.driver.find_element(By.XPATH,"//body/div[@id='root']/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]").get_attribute("innerText")
         assert name == "betty melaku"
 
@@ -39,32 +41,33 @@ class Post(Setup ,unittest.TestCase):
         SAVE = '//button[contains(text(),"Edit")]'
 
         self.driver.find_element(By.XPATH, PROFILE).click()
-        sleep(2)
+        time.sleep(2)
         """click on the edit button"""
         self.driver.find_element(By.XPATH, EDIT_BUTTON).click()
-        sleep(3)
+        time.sleep(3)
         """edit"""
         self.driver.find_element(By.XPATH, INPUT).send_keys("hello you")
-        sleep(3)
+        time.sleep(3)
         """save changes"""
         self.driver.find_element(By.XPATH, SAVE).click()
-        sleep(3)
+        time.sleep(3)
 
     def test_delete_post(self):
         self.driver.find_element(By.XPATH, PROFILE).click()
-        sleep(10)
+        time.sleep(10)
         self.driver.find_element(By.XPATH, DELETE_BUTTON).click()
-        sleep(5)
+        time.sleep(5)
         pyautogui.press('enter')
-        sleep(5)
+        time.sleep(5)
 
 
     def test_likepost(self):
 
         self.driver.find_element(By.XPATH, PROFILE).click()
-        sleep(2)
+        time.sleep(2)
         self.driver.find_element(By.XPATH,"//body/div[@id='root']/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/span[1]/*[1]").click()
-        sleep(5)
+        time.sleep(5)
+
 
     def test_comment_profile(self):
         INPUT_COMMENT1 = '//body/div[@id="root"]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/input[1]'
