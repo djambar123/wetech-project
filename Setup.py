@@ -5,7 +5,6 @@ from time import sleep
 from webdriver_manager.chrome import ChromeDriverManager
 
 
-
 class Setup:
     def init(self):
         driver = webdriver.Chrome(ChromeDriverManager().install())
