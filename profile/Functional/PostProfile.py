@@ -67,9 +67,3 @@ class Post(Setup ,unittest.TestCase):
         sleep(5)
 
 
-
-    def test_count_likes(self):
-        self.driver.find_element(By.XPATH, PROFILE).click()
-        sleep(2)
-        count= self.driver.find_element(By.XPATH,"//body/div[@id='root']/div[1]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[3]/div[1]/span[2]").get_attribute("innarText")
-        assert count == "0 people like it"
