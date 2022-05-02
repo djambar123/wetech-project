@@ -1,8 +1,11 @@
-from profileimage import *
-from testfunctionals import  *
+from profile import functional
 
-A = Second()
-A.testProfileSearch()
+from Setup import Setup
+
+A = profile.functional.Profile
+A.Profile.testA_square()
+
+
 
 # B = Second()
 # B.testButtonlogout()

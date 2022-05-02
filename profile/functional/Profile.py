@@ -2,7 +2,7 @@ from Setup import *
 
 
 class Profile(Setup):
-    def testProfileSearch(self):
+    def test_ProfileSearch(self):
         driver = Setup.init(self)
         sleep(2)
         PROFILE= "/html[1]/body[1]/div[2]/div[1]/div[2]/div[1]/div[3]/a[1]/img[1]"
@@ -10,7 +10,7 @@ class Profile(Setup):
         SERCH="//body/div[@id='root']/div[1]/div[2]/div[1]/div[2]/div[1]/input[1]"
         BUTTON_SERCH="//button[contains(text(),'Search')]"
         sleep(1)
-        driver.find_element(By.XPATH,SERCH).send_keys("betty")
+        driver.find_element(By.XPATH,SERCH).send_keys("simha")
         sleep(2)
         driver.find_element(By.XPATH,BUTTON_SERCH).click()
         sleep(1)
@@ -65,3 +65,4 @@ class Profile(Setup):
         sleep(1)
         driver.find_element(By.XPATH,SELECT).click()
         sleep(2)
+
