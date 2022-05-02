@@ -1,4 +1,4 @@
-from profile.functional.Profile import  *
+from profile.Functional.Profile import  *
 
 # A = Second()
 # A.testProfileSearch()
