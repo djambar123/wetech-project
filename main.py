@@ -1,5 +1,4 @@
-from Driver import testfunctionals
-from testfunctionals import  *
+from profile.functional.Profile import  *
 
 # A = Second()
 # A.testProfileSearch()
