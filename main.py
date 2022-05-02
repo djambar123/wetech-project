@@ -1,11 +1,7 @@
-from profile import functional
+from profile.Functional.Profile import  *
 
-from Setup import Setup
-
-A = profile.functional.Profile
-A.Profile.testA_square()
-
-
+# A = Second()
+# A.testProfileSearch()
 
 # B = Second()
 # B.testButtonlogout()
@@ -13,11 +9,11 @@ A.Profile.testA_square()
 # C = Second()
 # C.testButton_logo()
 
-# D = Second()
-# D.testBotton_Toggle_theme()
+D = Second()
+D.testBotton_Toggle_theme()
 
-# E= Second()
-# E.testA_square()
+E= Second()
+E.testA_square()
 
 # H=Second()
 # H.testSelecting_friends()

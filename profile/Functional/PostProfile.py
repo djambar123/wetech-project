@@ -2,7 +2,8 @@ from Setup import *
 import unittest
 import pyautogui
 
-
+LIKE_BUTTON ='//body/div[@id="root"]/div[1]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[3]/div[1]//*[name()="svg"]'
+DELETE_BUTTON = '//body/div[@id="root"]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/*[name()="svg"][2]'
 PROFILE = '//body/div[@id="root"]/div[1]/div[2]/div[1]/div[3]/a[1]/img[1]'
 
 class Post(Setup ,unittest.TestCase):
@@ -51,26 +52,24 @@ class Post(Setup ,unittest.TestCase):
 
     def test_delete_post(self):
         self.driver.find_element(By.XPATH, PROFILE).click()
-        sleep(2)
-        # self.driver.find_element(By.XPATH,"//body/div[@id='root']/div[1]/div[2]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[2]/*[2]").click()
-        # sleep(5)
-        # pyautogui.press('enter')
+        sleep(10)
+        self.driver.find_element(By.XPATH, DELETE_BUTTON).click()
+        sleep(5)
+        pyautogui.press('enter')
+        sleep(5)
 
-    def test_like_post(self):
+
+    def test_likepost(self):
+
         self.driver.find_element(By.XPATH, PROFILE).click()
         sleep(2)
         self.driver.find_element(By.XPATH,"//body/div[@id='root']/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/span[1]/*[1]").click()
         sleep(5)
 
-    def test_nolikepost(self):
 
-        self.driver.find_element(By.XPATH, PROFILE).click()
-        sleep(2)
-        self.driver.find_element(By.XPATH,"//body/div[@id='root']/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/span[2]/*[1]").click()
-        sleep(5)
 
     def test_count_likes(self):
         self.driver.find_element(By.XPATH, PROFILE).click()
         sleep(2)
-        count= self.driver.find_element(By.XPATH,"//body/div[@id='root']/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]").get_attribute("innarText")
+        count= self.driver.find_element(By.XPATH,"//body/div[@id='root']/div[1]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[3]/div[1]/span[2]").get_attribute("innarText")
         assert count == "0 people like it"
