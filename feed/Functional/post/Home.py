@@ -11,7 +11,7 @@ import pyautogui
 
 
 def init():
-    driver = webdriver.Chrome("../driver/chromedriver.exe")
+    driver = webdriver.Chrome("../../../driver/chromedriver.exe")
     driver.maximize_window()
     driver.get(("https://wetechsocial.herokuapp.com"))
     driver.find_element(By.XPATH, '//button[contains(text(),"Log into Account")]').click()
