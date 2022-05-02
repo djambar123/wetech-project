@@ -1,6 +1,9 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from time import sleep
+
+from selenium.webdriver.support.wait import WebDriverWait
+
 from Source import *
 
 class Cheak(Start):
@@ -18,6 +21,22 @@ class Cheak(Start):
                     sleep(1)
             else:
                 driver.find_element(By.XPATH,"//button[contains(text(),'Sign Up')]").click()
+                #m = driver.find_element(By.CLASS_NAME("loginInput"))
+
+        try:
+            listItems = driver.find_elements(By.TAG_NAME, "input")
+            for e in listItems:
+                isRequired = e.get_attribute("required")
+                if isRequired != "" and "Required" in isRequired:
+                    print(e.find_element_by_xpath("//input[@placeholder='User Name']").text)
+                    print("alert Exists in page")
+        except Exception:
+            print("alert does not Exist in page")
+
+                # alert = driver.switch_to.alert
+                # alert.accept()
+                # print("alert accepted")
+
 
         driver.close()
 
