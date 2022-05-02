@@ -4,7 +4,6 @@ from selenium.webdriver.common.by import By
 from time import sleep
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions
 from profileimage import *
 
 
@@ -17,7 +16,7 @@ class Second(ProfileImage):
         SERCH="//body/div[@id='root']/div[1]/div[2]/div[1]/div[2]/div[1]/input[1]"
         BUTTON_SERCH="//button[contains(text(),'Search')]"
         sleep(1)
-        driver.find_element(By.XPATH,SERCH).send_keys("betty")
+        driver.find_element(By.XPATH,SERCH).send_keys("simha")
         sleep(2)
         driver.find_element(By.XPATH,BUTTON_SERCH).click()
         sleep(1)

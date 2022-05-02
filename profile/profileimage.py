@@ -5,7 +5,7 @@ from time import sleep
 
 class ProfileImage:
     def init(self):
-        driver = webdriver.Chrome('C:/Users/User/wetech/Driver/chromedriver.exe')
+        driver = webdriver.Chrome('C:/Users/User/wetech-project/chromedriver.exe')
         driver.get('https://wetechsocial.herokuapp.com/')
         driver.maximize_window()
         LOGIN = "//button[contains(text(),'Log into Account')]"

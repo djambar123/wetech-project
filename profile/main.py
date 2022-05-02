@@ -1,8 +1,8 @@
-from Driver import testfunctionals
+from profileimage import *
 from testfunctionals import  *
 
-# A = Second()
-# A.testProfileSearch()
+A = Second()
+A.testProfileSearch()
 
 # B = Second()
 # B.testButtonlogout()
@@ -10,11 +10,11 @@ from testfunctionals import  *
 # C = Second()
 # C.testButton_logo()
 
-D = Second()
-D.testBotton_Toggle_theme()
+# D = Second()
+# D.testBotton_Toggle_theme()
 
-E= Second()
-E.testA_square()
+# E= Second()
+# E.testA_square()
 
 # H=Second()
 # H.testSelecting_friends()
