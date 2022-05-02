@@ -66,4 +66,22 @@ class Post(Setup ,unittest.TestCase):
         self.driver.find_element(By.XPATH,"//body/div[@id='root']/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/span[1]/*[1]").click()
         sleep(5)
 
+    def test_comment_profile(self):
+        INPUT_COMMENT1 = '//body/div[@id="root"]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/input[1]'
+        SEND_BUTTON1 = '//body/div[@id="root"]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/button[1]'
 
+        time.sleep(5)
+        self.driver.find_element(By.XPATH, INPUT_COMMENT1).send_keys("hello")
+        time.sleep(10)
+        self.driver.find_element(By.XPATH, SEND_BUTTON1).click()
+        time.sleep(10)
+
+    def test_see_comment_profile(self):
+        EXIT_COMMENT1 = '//span[contains(text(),"x")]'
+        CLICK_ON_COMMENT1 = '//body/div[@id="root"]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]'
+
+        time.sleep(5)
+        self.driver.find_element(By.XPATH, CLICK_ON_COMMENT1).click()
+        time.sleep(5)
+        self.driver.find_element(By.XPATH, EXIT_COMMENT1).click()
+        time.sleep(5)
