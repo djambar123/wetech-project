@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/werech-project.iml" filepath="$PROJECT_DIR$/.idea/werech-project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/wetech-project.iml" filepath="$PROJECT_DIR$/.idea/wetech-project.iml" />
     </modules>
   </component>
 </project>
