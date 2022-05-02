@@ -1,6 +1,9 @@
 from Setup import *
 import unittest
 
+searchInput = '//body[1]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/input[1]'
+searchButton = "//button[contains(text(),'Search')]"
+
 
 class Search(Setup, unittest.TestCase):
 
@@ -15,8 +18,6 @@ class Search(Setup, unittest.TestCase):
         """Tests wetechsocial search feature. Searches for Existing user "simha" then
                 verified that some results show up."""
 
-        searchInput = '//body[1]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/input[1]'
-        searchButton = "//button[contains(text(),'Search')]"
         sleep(3)
         # Checks if the word "simha" is in the field
         self.driver.find_element(By.XPATH, searchInput).send_keys("simha")
@@ -29,13 +30,14 @@ class Search(Setup, unittest.TestCase):
 
 
     def test_search_incorrectly(self):
+
         """Tests wetechsocial search feature. Searches for integers- "4561", then
                         verified that some results show up."""
+
         sleep(3)
-        self.driver.find_element(By.XPATH, '//body[1]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/input[1]').send_keys(
-            "84685")
+        self.driver.find_element(By.XPATH, searchInput).send_keys("84685")
         sleep(2)
-        self.driver.find_element(By.XPATH, "//button[contains(text(),'Search')]").click()
+        self.driver.find_element(By.XPATH, searchButton).click()
         sleep(2)
 
 
@@ -44,9 +46,9 @@ class Search(Setup, unittest.TestCase):
                                 verified that some results show up."""
         sleep(3)
         # Checks if the field Null
-        self.driver.find_element(By.XPATH, '//body[1]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/input[1]').clear()
+        self.driver.find_element(By.XPATH, searchInput).clear()
         sleep(2)
-        self.driver.find_element(By.XPATH, "//button[contains(text(),'Search')]").click()
+        self.driver.find_element(By.XPATH, searchButton).click()
         sleep(2)
         self.driver.find_element(By.XPATH, "//body/div[@id='root']/div[1]/div[2]/div[2]")
         sleep(2)
