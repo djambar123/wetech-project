@@ -1,10 +1,9 @@
-from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 import unittest
 import time
 import pyautogui
 from Setup import Setup
-from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support.select import Select
 
 
 
@@ -20,6 +19,8 @@ LIKE_BUTTON ='//div[1]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[3]/div[1]//
 SEND_BUTTON = '//body/div[@id="root"]/div[1]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[4]/div[1]/button[1]'
 SEE_COMMENT_BUTTON = '//body/div[@id="root"]/div[1]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[3]/div[2]/span[1]'
 EDIT_BUTTON = '//body/div[@id="root"]/div[1]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[2]/*[1]'
+LOG_IN_BUTTON = '//button[contains(text(),"Log In")]'
+
 
 
 
@@ -34,7 +35,6 @@ class Post(Setup,unittest.TestCase):
 
 
     def test_share_text_correctly(self):
-        time.sleep(3)
         self.driver.find_element(By.XPATH,TEXT).send_keys("Hello, my name is Aviva")
         time.sleep(3)
         self.driver.find_element(By.XPATH,SHARE).click()
@@ -156,6 +156,9 @@ class Post(Setup,unittest.TestCase):
         time.sleep(3)
         pyautogui.press('enter')
         time.sleep(3)
+
+
+
 
 
 
