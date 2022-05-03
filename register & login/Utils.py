@@ -66,8 +66,10 @@ class CHEACK(Setup, unittest.TestCase):
 
 
 
-    def test_log(self,Emil,password):
+    def test_log(self):
         self.driver.find_element(By.XPATH,"//button[@class='loginRegisterButton']").click()
+        Emil = "dj@gmail.com"
+        password = "123456"
         lis = [Emil,password]
         log = self.driver.find_elements(By.XPATH, "//form[@class='loginBox']/child::*")
         num = 0
