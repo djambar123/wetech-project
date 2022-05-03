@@ -42,6 +42,8 @@ class Post(Setup,unittest.TestCase):
         self.driver.find_element(By.XPATH,SHARE).click()
         WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, SHARE)))
 
+
+
     """Tests wetechsocial uploading  post with no text."""
 
     def test_share_text_incorrectly(self):
@@ -49,6 +51,8 @@ class Post(Setup,unittest.TestCase):
         self.driver.find_element(By.XPATH,SHARE).click()
         WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, SHARE)))
         self.driver.refresh()
+
+
 
     """Tests wetechsocial uploading  post with photo ."""
 

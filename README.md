@@ -5,6 +5,7 @@ Aviva yaso,Betty Melaku,Daniel Jambar,simha/
 WETECH is a social site for students who have previously studied at TECH-CAREER or are currently studying. On this site you can create a user and use it to follow friends, share posts that include photos, videos, location or tagging.
 In addition you can read and enrich your knowledge in certain programming languages like CSS, JAVASCRIPT, HTML.
 
+link: https://wetechsocial.herokuapp.com
 
 
 We performed FUNCTIONAL and UI tests using SELENIUM WEBDRIVER.
