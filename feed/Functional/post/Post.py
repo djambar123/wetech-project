@@ -119,6 +119,7 @@ class Post(Setup,unittest.TestCase):
 
 
 
+
     def test_delete_post(self):
         WebDriverWait(self.driver,10).until(EC.presence_of_element_located((By.XPATH,DELETE_BUTTON)))
         self.driver.find_element(By.XPATH,DELETE_BUTTON).click()
