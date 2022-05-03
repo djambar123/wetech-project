@@ -74,6 +74,12 @@ class ProfileBar(Setup ,unittest.TestCase):
         sleep(4)
 
 
+    # Execute after all test methode
+    @classmethod
+    def tearDownClass(cls):
+        cls.driver.close()
+        cls.driver.quit()
+
     # def testSelecting_friends(self):
     #
     #     self.driver.find_element(By.XPATH,PROFILE).click()
