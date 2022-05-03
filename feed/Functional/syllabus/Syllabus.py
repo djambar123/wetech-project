@@ -15,10 +15,10 @@ class Syllabus(Setup,unittest.TestCase):
     def test_syllabus(self):
         sleep(3)
         #
-        self.driver.find_elements(By.XPATH,"/html[1]/body[1]/div[2]/div[1]/div[2]/div[2]/div[3]/div[1]/ul[1]/ul[1]/li")
+        buttons = self.driver.find_elements(By.XPATH,"/html[1]/body[1]/div[2]/div[1]/div[2]/div[2]/div[3]/div[1]/ul[1]/ul[1]/li")
         p = 0
         # clicking buttons in syllabus
-        while p < 3:
+        while p < len(buttons):
             html_link = self.driver.find_elements(By.CLASS_NAME,"links")
             html_link[p].click()
             sleep(10)
