@@ -98,3 +98,9 @@ class UI(Setup, unittest.TestCase):
             sleep(3)
             user= self.driver.find_element(By.CSS_SELECTOR,"body.INDlangdirLTR.INDpositionLeft.INDDesktop.INDChrome.INDhasDragTooltip:nth-child(2) div.profile div.profileRight div.profileRightBottom div.rightBar div.rightBarWrapper div.rigthBarInfo > h4.rightBarTitleFirstPart:nth-child(3)").get_attribute("innerText")
             assert user == "User Friend's"
+
+    def testA_square(self):
+
+        self.driver.find_element(By.XPATH,PROFILE).click()
+        self.driver.find_element(By.CSS_SELECTOR,"#button").click()
+        sleep(2)
