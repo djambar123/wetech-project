@@ -19,9 +19,20 @@ LOGIN/SIGNIN:
 
 
 FEED PAGE:
-
-    • Share Post - Aviva
+    
+    
+    • Share Post - Aviva Ayasso
+    we test the options of uploading posts in several ways: 
+    text, text with image, tagging people and sharing emotions
+    In addition, we examined the possibility of responding to a post by like and comment,
+    deleting and editing a post.
     • Search, Syllabus - Betty Melaku
+    In the search line we tested the options of searching pepole,
+    posts.
+    And UI testhing Of both pages.
+
+
+
 
 PROFILE PAGE:
 
