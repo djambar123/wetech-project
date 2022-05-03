@@ -1,5 +1,4 @@
 
-from  time import time
 from Setup import *
 import unittest
 import pyautogui
@@ -21,19 +20,17 @@ class Post(Setup ,unittest.TestCase):
     def test_profile_picture(self):
 
         self.driver.find_element(By.XPATH, PROFILE).click()
-        time.sleep(2)
+        sleep(2)
         self.driver.find_element(By.XPATH,"//body/div[@id='root']/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]").click()
-        time.sleep(2)
-        self.driver.find_element(By.XPATH,"//body/div[@id='root']/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]").click()
-        time.sleep(3)
-        picture_post = self.driver.find_element(By.XPATH,"//body/div[@id='root']/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]").get_attribute("innerText")
+        sleep(2)
+        picture_post= self.driver.find_element(By.XPATH,"//body/div[@id='root']/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]").get_attribute("innerText")
         assert picture_post == ""
 
 
     def test_namePost(self):
         self.driver.find_element(By.XPATH, PROFILE).click()
-        time.sleep(2)
-        name= self.driver.find_element(By.XPATH,"//body/div[@id='root']/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]").get_attribute("innerText")
+        sleep(2)
+        name= self.driver.find_element(By.XPATH,"//span[contains(text(),'betty melaku')]").get_attribute("innerText")
         assert name == "betty melaku"
 
 
@@ -43,36 +40,33 @@ class Post(Setup ,unittest.TestCase):
         SAVE = '//button[contains(text(),"Edit")]'
 
         self.driver.find_element(By.XPATH, PROFILE).click()
-        time.sleep(2)
+        sleep(2)
         """click on the edit button"""
         self.driver.find_element(By.XPATH, EDIT_BUTTON).click()
-        time.sleep(3)
+        sleep(3)
         """edit"""
         self.driver.find_element(By.XPATH, INPUT).send_keys("hello you")
-        time.sleep(3)
+        sleep(3)
         """save changes"""
         self.driver.find_element(By.XPATH, SAVE).click()
-        time.sleep(3)
+        sleep(3)
 
 
     def test_delete_Post(self):
         self.driver.find_element(By.XPATH, PROFILE).click()
-        time.sleep(10)
+        sleep(10)
         self.driver.find_element(By.XPATH, DELETE_BUTTON).click()
-        time.sleep(5)
+        sleep(5)
         pyautogui.press('enter')
-        time.sleep(5)
+        sleep(5)
 
 
 
     def test_likepost(self):
 
         self.driver.find_element(By.XPATH, PROFILE).click()
-        time.sleep(2)
+        sleep(2)
         self.driver.find_element(By.XPATH,"//body/div[@id='root']/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/span[1]/*[1]").click()
-        time.sleep(2)
+        sleep(2)
         self.driver.find_element(By.XPATH,"//body/div[@id='root']/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/span[1]/*[1]").click()
-        time.sleep(5)
-
-
-
+        sleep(5)
