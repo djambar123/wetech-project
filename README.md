@@ -37,4 +37,9 @@ FEED PAGE:
 
 PROFILE PAGE:
 
-    • 
+    • profile page - Simha Amara
+
+    First I checked the top buttons on the profile page
+    I then checked the posts that are on the profile page
+    Editing a post Deleting a post and saving
+    And I did UI tests all over the screen
