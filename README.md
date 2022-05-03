@@ -1,4 +1,4 @@
-# werech-project
+# Wetech-project
 Aviva yaso,Betty Melaku,Daniel Jambar,simha/
 
 
