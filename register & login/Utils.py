@@ -15,20 +15,21 @@ class Cheak(Start):
         num = 0
         for i in reg:
             if i.tag_name == "input":
-                if num < 10:
+                if num <= 9:
                     i.send_keys(lis[num])
                     num+=1
                     sleep(1)
             else:
-                driver.find_element(By.XPATH,"//button[contains(text(),'Sign Up')]").click()
+                i.click()
+                sleep(4)
                 #m = driver.find_element(By.CLASS_NAME("loginInput"))
 
         try:
             listItems = driver.find_elements(By.TAG_NAME, "input")
             for e in listItems:
-                isRequired = e.get_attribute("required")
-                if isRequired != "" and "Required" in isRequired:
-                    print(e.find_element_by_xpath("//input[@placeholder='User Name']").text)
+                isRequired = e.get_attribute("validationMessage")
+                if isRequired == "Please fill out this field.":
+                    print(e)
                     print("alert Exists in page")
         except Exception:
             print("alert does not Exist in page")
