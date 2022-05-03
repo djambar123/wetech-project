@@ -9,6 +9,14 @@ In addition you can read and enrich your knowledge in certain programming langua
 
 We performed FUNCTIONAL and UI tests using SELENIUM WEBDRIVER.
 
+LOGIN/SIGNIN:
+
+    •  Testing on the wetch system: Daniel Jambar
+        First we checked the sign-up and log-in process.
+        Test registertion correctly and not correctly on each field in the enrollment process.
+        And check to connect with the details we've registered with
+        In a valid and invalid manner
+
 
 FEED PAGE:
 
@@ -18,11 +26,3 @@ FEED PAGE:
 PROFILE PAGE:
 
     • 
-
-LOGIN/SIGNIN:
-
-    •  Testing on the wetch system: Daniel Jambar
-        First we checked the sign-up and log-in process.
-        Test registertion correctly and not correctly on each field in the enrollment process.
-        And check to connect with the details we've registered with
-        In a valid and invalid manner
