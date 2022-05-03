@@ -7,7 +7,7 @@ from Source import *
 
 we =  "//h3[@class='loginLogo']"
 per =  "//span[@class='LoginDesc']"
-sign =  "//button[@type='submit']"
+sign =  "//button[contains(text(),'Log In')]"
 login = "//button[@class='loginRegisterButton']"
 pageLog = "//button[@class='loginRegisterButton']"
 
