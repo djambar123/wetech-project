@@ -47,3 +47,5 @@ Emil = "sdc"
 password = "sd2"
 driver = Cheak()
 driver.test_log(Emil,password)
+
+driver.test_ui_signup()
