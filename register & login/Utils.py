@@ -62,12 +62,11 @@ class Cheak(Start):
                     i.send_keys(lis[num])
                     num += 1
             else:
-                if num == 3:
-                    driver.find_element(By.XPATH,"//button[@class='loginButton']").click()
+                driver.find_element(By.XPATH,"//button[@class='loginButton']").click()
                 sleep(1)
-        driver.close()
-        # logout = driver.find_element(By.XPATH, "(//span[@class='logoName'])[1]").get_attribute("innerText")
-        # assert logout == "WeTech"
+            driver.close()
+        # logout = driver.find_element(By.XPATH, "//span[contains(text(),'logout')][1]").get_attribute("innerText")
+        # assert logout == "logout"
 
 
 
