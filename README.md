@@ -16,6 +16,7 @@ LOGIN/SIGNIN:
         Test registertion correctly and not correctly on each field in the enrollment process.
         And check to connect with the details we've registered with
         In a valid and invalid manner
+        And UI testhing 
 
 
 FEED PAGE:
