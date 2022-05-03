@@ -20,3 +20,10 @@ class Setup:
         sleep(3)
         self.driver.refresh()
         return self.driver
+
+
+    def init_start(self):
+            self.driver = webdriver.Chrome(ChromeDriverManager().install())
+            self.driver.maximize_window()
+            self.driver.get(("https://wetechsocial.herokuapp.com"))
+            return self.driver
