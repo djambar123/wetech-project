@@ -35,15 +35,14 @@ class Post(Setup,unittest.TestCase):
         self.driver = Setup.init(self)
         return self.driver
 
-
+    """Tests wetechsocial uploading post with text ."""
 
     def test_share_text_correctly(self):
         self.driver.find_element(By.XPATH,TEXT).send_keys("Hello, my name is Aviva")
         self.driver.find_element(By.XPATH,SHARE).click()
         WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, SHARE)))
 
-
-
+    """Tests wetechsocial uploading  post with no text."""
 
     def test_share_text_incorrectly(self):
         self.driver.find_element(By.XPATH,TEXT).send_keys("")
@@ -51,8 +50,7 @@ class Post(Setup,unittest.TestCase):
         WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, SHARE)))
         self.driver.refresh()
 
-
-
+    """Tests wetechsocial uploading  post with photo ."""
 
     def test_share_image_correctly(self):
         self.driver.find_element(By.XPATH,PHOTO_OR_VIDEO).click()
@@ -63,8 +61,7 @@ class Post(Setup,unittest.TestCase):
         self.driver.find_element(By.XPATH, SHARE).click()
         time.sleep(5)
 
-
-
+    """Tests wetechsocial uploading  post with text and photo."""
 
     def test_share_text_with_image(self):
         self.driver.find_element(By.XPATH,TEXT).send_keys("Hello, Aviva")
@@ -76,7 +73,7 @@ class Post(Setup,unittest.TestCase):
         self.driver.find_element(By.XPATH, SHARE).click()
         time.sleep(5)
 
-
+    """Tests wetechsocial links in post."""
 
 
     def test_Links_in_post(self):
@@ -90,8 +87,7 @@ class Post(Setup,unittest.TestCase):
         self.driver.find_element(By.XPATH,SHARE).click()
         WebDriverWait(self.driver,10).until(EC.element_to_be_clickable((By.XPATH, SHARE)))
 
-
-
+    """Tests wetechsocial comment on post."""
 
     def test_comment_on_post(self):
         WebDriverWait(self.driver,10).until(EC.presence_of_element_located((By.XPATH,INPUT_COMMENT)))
@@ -99,8 +95,7 @@ class Post(Setup,unittest.TestCase):
         self.driver.find_element(By.XPATH,SEND_BUTTON).click()
         WebDriverWait(self.driver,10).until(EC.element_to_be_clickable((By.XPATH, SEND_BUTTON)))
 
-
-
+    """Tests wetechsocial see comment in post."""
 
     def test_see_comment(self):
         WebDriverWait(self.driver,10).until(EC.presence_of_element_located((By.XPATH,SEE_COMMENT_BUTTON)))
@@ -109,16 +104,16 @@ class Post(Setup,unittest.TestCase):
         self.driver.find_element(By.XPATH,EXIT_COMMENT).click()
 
 
+    """Tests wetechsocial like and unlike on post."""
 
-
-    def test_like_post(self):
+    def test_like_unlike_post(self):
         WebDriverWait(self.driver,10).until(EC.presence_of_element_located((By.XPATH,LIKE_BUTTON)))
         self.driver.find_element(By.XPATH,LIKE_BUTTON).click()
         WebDriverWait(self.driver,10).until(EC.element_to_be_clickable((By.XPATH, LIKE_BUTTON)))
 
 
 
-
+    """Tests wetechsocial delete post."""
 
     def test_delete_post(self):
         WebDriverWait(self.driver,10).until(EC.presence_of_element_located((By.XPATH,DELETE_BUTTON)))
@@ -128,6 +123,7 @@ class Post(Setup,unittest.TestCase):
 
 
 
+    """Tests wetechsocial edit post."""
 
     def test_edit_post(self):
         WebDriverWait(self.driver,10).until(EC.presence_of_element_located((By.XPATH,EDIT_BUTTON)))
