@@ -3,8 +3,14 @@ from selenium.webdriver.common.keys import Keys
 from time import sleep
 
 from selenium.webdriver.support.wait import WebDriverWait
-
 from Source import *
+
+we =  "//h3[@class='loginLogo']"
+per =  "//span[@class='LoginDesc']"
+sign =  "//button[@type='submit']"
+login = "//button[@class='loginRegisterButton']"
+pageLog = "//button[@class='loginRegisterButton']"
+
 
 class Cheak(Start):
 
@@ -15,22 +21,23 @@ class Cheak(Start):
         num = 0
         for i in reg:
             if i.tag_name == "input":
-                if num < 10:
+                if num < 9:
                     i.send_keys(lis[num])
                     num+=1
-                    sleep(1)
             else:
-                driver.find_element(By.XPATH,"//button[contains(text(),'Sign Up')]").click()
+                driver.find_element(By.CSS_SELECTOR,"button[type='submit']").click()
+                sleep(3)
+
                 #m = driver.find_element(By.CLASS_NAME("loginInput"))
 
         try:
             listItems = driver.find_elements(By.TAG_NAME, "input")
             for e in listItems:
-                isRequired = e.get_attribute("required")
-                if isRequired != "" and "Required" in isRequired:
-                    print(e.find_element_by_xpath("//input[@placeholder='User Name']").text)
+                isRequired = e.get_attribute("validationMessage")
+                if isRequired == "Please fill out this field.":
+                    print(e)
                     print("alert Exists in page")
-        except Exception:
+        except :
             print("alert does not Exist in page")
 
                 # alert = driver.switch_to.alert
@@ -47,34 +54,36 @@ class Cheak(Start):
         driver = Start.setup(self)
         driver.find_element(By.XPATH,"//button[@class='loginRegisterButton']").click()
         lis = [Emil,password]
-        reg = driver.find_elements(By.XPATH, "//form[@class='loginBox']/child::*")
+        log = driver.find_elements(By.XPATH, "//form[@class='loginBox']/child::*")
         num = 0
-        for i in reg:
+        for i in log:
             if i.tag_name == "input":
                 if num < 2:
                     i.send_keys(lis[num])
                     num += 1
             else:
-                driver.find_element(By.XPATH,"//button[@class='loginButton']").click()
-                sleep(2)
-                driver.close()
-        logout = driver.find_element(By.XPATH, "(//span[@class='logoName'])[1]").get_attribute("innerText")
-        assert logout == "WeTech"
+                if num == 3:
+                    driver.find_element(By.XPATH,"//button[@class='loginButton']").click()
+                sleep(1)
+        driver.close()
+        # logout = driver.find_element(By.XPATH, "(//span[@class='logoName'])[1]").get_attribute("innerText")
+        # assert logout == "WeTech"
 
 
 
     def test_ui_signup(self):
         driver = Start.setup(self)
-        title = driver.find_element(By.XPATH, "//h3[@class='loginLogo']").get_attribute("innerText")
+        driver.find_element(By.XPATH,pageLog).click()
+        title = driver.find_element(By.XPATH,we).get_attribute("innerText")
         assert title == "WeTechSocial"
 
-        text = driver.find_element(By.XPATH, "//span[@class='LoginDesc']").get_attribute("innerText")
+        text = driver.find_element(By.XPATH,per).get_attribute("innerText")
         assert text == "connect with friends and the world around you on We-Tech Social"
 
-        signUp = driver.find_element(By.XPATH, "//button[@type='submit']").get_attribute("innerText")
+        signUp = driver.find_element(By.XPATH,sign).get_attribute("innerText")
         assert signUp == "Sign Up"
 
-        log = driver.find_element(By.XPATH, "//button[@class='loginRegisterButton']").get_attribute("innerText")
+        log = driver.find_element(By.XPATH,login).get_attribute("innerText")
         assert log == "Log into Account"
 
 

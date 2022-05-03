@@ -18,11 +18,11 @@ from Utils import *
 
 
 # #invalid test username null
-user_name = ""
-user_LastName = "asas"
+user_name = "hfc"
+user_LastName = "fyxh"
 Url_profile_pic = "asxasc"
 Url_cover_pic = "file:///Users/dnylgmbr/Desktop/one/17354.webp"
-Emil = "dj@mac.com"
+Emil = "dj@gmail.com"
 contry = "zxc"
 city = "zxc"
 password = "123456"
