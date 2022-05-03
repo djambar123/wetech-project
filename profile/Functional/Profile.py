@@ -5,7 +5,7 @@ PROFILE = '//body/div[@id="root"]/div[1]/div[2]/div[1]/div[3]/a[1]/img[1]'
 SERCH = '//body/div[@id="root"]/div[1]/div[2]/div[1]/div[2]/div[1]/input[1]'
 BUTTON_SERCH = "//button[contains(text(),'Search')]"
 
-class Profile(Setup ,unittest.TestCase):
+class ProfileBar(Setup ,unittest.TestCase):
 
     driver = None
 
@@ -71,13 +71,14 @@ class Profile(Setup ,unittest.TestCase):
         self.driver.find_element(By.XPATH,PROFILE).click()
         sleep(2)
         self.driver.find_element(By.XPATH,"//button[contains(text(),'Toggle theme')]").click()
-        sleep(2)
+        sleep(4)
 
-    def testA_square(self):
 
-        self.driver.find_element(By.XPATH,PROFILE).click()
-        self.driver.find_element(By.CSS_SELECTOR,"#button").click()
-        sleep(2)
+    # Execute after all test methode
+    @classmethod
+    def tearDownClass(cls):
+        cls.driver.close()
+        cls.driver.quit()
 
     # def testSelecting_friends(self):
     #
