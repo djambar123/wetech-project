@@ -29,7 +29,7 @@ class Post(Setup ,unittest.TestCase):
 
     def test_namePost(self):
         self.driver.find_element(By.XPATH, PROFILE).click()
-        sleep(2)
+        sleep(10)
         name= self.driver.find_element(By.XPATH,"//span[contains(text(),'betty melaku')]").get_attribute("innerText")
         assert name == "betty melaku"
 
