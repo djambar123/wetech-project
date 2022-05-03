@@ -1,13 +1,13 @@
 from Source import *
+from selenium import webdriver
 from selenium.webdriver.common.by import By
 from Utils import *
 
 #valid login
-Emil = "dj@mac.com"
-password = "123456"
-driver = Cheak()
-driver.test_log(Emil,password)
-driver.find_element(By.XPATH, "//form[@class='loginBox']/child::*").get_attribute("validationMessage")
+# Emil = "dj@mac.com"
+# password = "123456"
+# driver = Cheak()
+# driver.test_log(Emil,password)
 
 
 # #invalid login email null
