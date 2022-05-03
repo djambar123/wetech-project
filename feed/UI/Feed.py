@@ -2,7 +2,8 @@ from Setup import *
 import unittest
 
 
-class UI_Search(Setup, unittest.TestCase):
+class UI_Feed(Setup, unittest.TestCase):
+    """Tests UI in wetechsocial Feed Page ."""
 
     driver = None
 
