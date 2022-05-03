@@ -3,8 +3,6 @@ import unittest
 import time
 import pyautogui
 from Setup import Setup
-from selenium.webdriver.support.select import Select
-
 
 
 
@@ -75,31 +73,13 @@ class Post(Setup,unittest.TestCase):
         time.sleep(3)
 
 
-    def test_tag_in_post(self):
+    def test_Links_in_post(self):
         time.sleep(3)
-        self.driver.find_element(By.XPATH,TEXT).send_keys("tag")
+        self.driver.find_element(By.XPATH,TEXT).send_keys("DO NOT WORK")
         time.sleep(3)
         self.driver.find_element(By.XPATH,'//span[contains(text(),"Tag")]').click()
         time.sleep(3)
-        self.driver.find_element(By.XPATH,SHARE).click()
-        time.sleep(3)
-
-
-
-    def test_location_in_post(self):
-        time.sleep(3)
-        self.driver.find_element(By.XPATH,TEXT).send_keys("location")
-        time.sleep(3)
         self.driver.find_element(By.XPATH,'//span[contains(text(),"Location")]').click()
-        time.sleep(3)
-        self.driver.find_element(By.XPATH,SHARE).click()
-        time.sleep(3)
-
-
-
-    def test_feelings_in_post(self):
-        time.sleep(3)
-        self.driver.find_element(By.XPATH,TEXT).send_keys("feelings")
         time.sleep(3)
         self.driver.find_element(By.XPATH,'//span[contains(text(),"Feeling")]').click()
         time.sleep(3)

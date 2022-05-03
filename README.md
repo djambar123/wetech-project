@@ -1,5 +1,5 @@
 # werech-project
-Aviva yaso,Betty Melaku,daniel,simha/
+Aviva Aviva,Betty Melaku,daniel,simha/
 
 
 WETECH is a social site for students who have previously studied at TECH-CAREER or are currently studying. On this site you can create a user and use it to follow friends, share posts that include photos, videos, location or tagging.
